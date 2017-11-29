@@ -20,8 +20,16 @@
 </div><br>
 
  <div class="row signup">
-
-
+<% if(hasErrors) {%>
+    <% for(var i=0; i<messages.length; i++){%>
+        <div class="alert alert-danger">
+            <a href="#" class="close" data-dismiss="alert" arial-label="close">
+               
+            </a>
+            <%= messages[i] %>
+      
+<%}%>
+<%}%>
      <form method="POST" class="" id="signupForm" action="/signup">
 
          <div class="row">

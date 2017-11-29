@@ -1,6 +1,7 @@
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var validator = require('express-validator');
 var engine = require('ejs-mate');
 var ejs = require('ejs');
 var session = require('express-session');
@@ -21,6 +22,8 @@ app.set('view engine', 'ejs');
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+
+app.use(validator());
 
 app.use(session({
     secret: 'thisismytestkey',

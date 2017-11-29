@@ -1,11 +1,11 @@
 {
   "name": "business-rating-app",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,9 +18,20 @@
     "ejs-mate": "^2.3.0",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
+    "express-validator": "^4.3.0",
     "mongoose": "^4.13.5",
     "nodemon": "^1.12.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shumanac/business-rate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shumanac/business-rate/issues"
+  },
+  "homepage": "https://github.com/shumanac/business-rate#readme",
+  "description": ""
 }
