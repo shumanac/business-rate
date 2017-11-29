@@ -12,7 +12,8 @@ var flash = require('connect-flash');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/rateme');
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/rateme', { useMongoClient: true });
 
 require('./config/passport');
 
