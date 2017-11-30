@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.6.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "connect-flash": "^0.1.1",
@@ -20,9 +21,12 @@
     "express-session": "^1.15.6",
     "express-validator": "^4.3.0",
     "mongoose": "^4.13.5",
+    "nodemailer": "^4.4.0",
+    "nodemailer-smtp-transport": "^2.7.4",
     "nodemon": "^1.12.1",
     "passport": "^0.4.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {},
   "repository": {

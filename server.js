@@ -16,6 +16,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/rateme', { useMongoClient: true });
 
 require('./config/passport');
+require('./secret/secret');
 
 app.use(express.static('public'));
 app.engine('ejs', engine);
