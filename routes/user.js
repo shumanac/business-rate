@@ -23,7 +23,7 @@ module.exports = (app, passport) => {
         res.render('user/login', {title: 'Login || RateMe', messages: errors, hasErrors: errors.length > 0});
     });
 
-    app.post('/login', validateLogin, passport.authenticate('local.login', {
+    app.post('/login', loginValidation, passport.authenticate('local.login', {
         successRedirect: '/home',
         failureRedirect: '/login',
         failureFlash : true
@@ -58,20 +58,23 @@ function validate(req, res, next){
 
 }
 
-function validateLogin(req, res, next){
+
+function loginValidation(req, res, next){
    
     req.checkBody('email', 'Email is required').notEmpty();
-    req.checkBody('password', 'Password is required').notEmpty();
-   
-    var errors = req.validationErrors();
+    req.checkBody('email', 'Email is Invalid').isEmail();
+    req.checkBody('password', 'Password Must Not Be Less Than 5 Characters').isLength({min:5});
+    req.check("password", "Password Must Contain at least 1 Number.").matches(/^(?=.*\d)(?=.*[a-z])[0-9a-z]{5,}$/, "i");
 
-    if(errors){
+    var loginErrors = req.validationErrors();
+
+    if(loginErrors){
         var messages = [];
-        errors.forEach((errors) => {
-            messages.push(errors.msg)
+        loginErrors.forEach((loginErrors) => {
+            messages.push(loginErrors.msg)
         });
         req.flash ('error', messages);
-        res.redirect('/signup');
+        res.redirect('/login');
     }else{
         return next();
     }
@@ -80,6 +83,7 @@ function validateLogin(req, res, next){
 
 
 }
+
 
 
 }

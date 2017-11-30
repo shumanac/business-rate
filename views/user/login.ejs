@@ -21,7 +21,16 @@
 
  <div class="row signup">
      
-   
+    <% if(hasErrors) {%>
+        <% for(var i=0; i<messages.length; i++){%>
+            <div class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert" arial-label="close">
+                   
+                </a>
+                <%= messages[i] %>
+          
+    <%}%>
+    <%}%>
 
      <form method="POST" action="/login">
 
