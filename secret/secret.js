@@ -1,6 +1,6 @@
 module.exports = {
     auth:{
-        user: ' ',
-        password: ''
+        user: 'shumana.chowdhury186@gmail.com ',
+        password: 'yesno'
     }
 }

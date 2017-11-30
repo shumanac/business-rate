@@ -4,8 +4,7 @@ var async = require('async');
 
 var crypto = require('crypto');
 var User = require('../models/user');
-var secret = require('../secret/secret')
-
+var secret = require('../secret/secret');
 
 
 var passport = require('../config/passport.js');
@@ -62,7 +61,7 @@ module.exports = (app, passport) => {
             function(rand, callback){
                 User.findOne({'email': req.body.email}, (err, user) => {
                     if(!user){
-                        req.flash('error', 'No account with that email exist or email invalid');
+                        req.flash('error', 'No account with that email exist or email is invalid');
                        return res.redirect('/forgot');
                     }
                     user.passwordResetToken = rand;
@@ -83,7 +82,7 @@ module.exports = (app, passport) => {
                 });
                 var mailOptions = {
                     to: user.email,
-                    from: 'RateMe '+' <'+secret.auth.user+'>',
+                    from: 'RateMe '+' <'+ secret.auth.user +'>',
                     subject: "RateMe Application Password Reset Token",
                     text: 'You have requested for password reset token. \n \n'+
                     'Please click on the link. \n \n'+
