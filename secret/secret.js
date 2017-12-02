@@ -1,7 +1,7 @@
 module.exports = {
     auth:{
         user: 'shumana.chowdhury186@gmail.com ',
-        pass: 'shumanarocks'
+        pass: ''
     },
 
     facebook: {
