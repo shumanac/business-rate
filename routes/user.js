@@ -61,7 +61,7 @@ module.exports = (app, passport) => {
     
 
     app.get('/home', (req, res) => {
-        res.render('home', {title:'Home || RateMe'});
+        res.render('home', {title:'Home || RateMe', user: req.user});
     });
 
     app.get('/forgot', (req, res) => {
